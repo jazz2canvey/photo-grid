@@ -28,7 +28,7 @@ class DailyNews extends StatelessWidget {
 
           if (state is ArticleLoading) {
 
-            return const Center(child: CupertinoActivityIndicator(),);
+            return const Center(child: CupertinoActivityIndicator(color: Colors.blue,),);
 
           } else if (state is ArticleException) {
 
@@ -58,7 +58,7 @@ class DailyNews extends StatelessWidget {
                       margin: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 20.0),
                       child: CachedNetworkImage(
                         imageUrl: state.articles!.articles[index].urlToImage ?? "https://img.etimg.com/thumb/msid-108581595,width-1200,height-630,imgsize-44210,overlay-economictimes/photo.jpg",
-                        placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+                        placeholder: (context, url) => const Center(child: CupertinoActivityIndicator(color: Colors.blue,)),
                         errorWidget: (context, url, error) => const Icon(Icons.error),
                       ),
                     ),
